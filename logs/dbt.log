@@ -1,0 +1,68 @@
+
+
+============================== 2023-03-03 23:31:33.002896 | 00e3ec31-9000-474f-8be9-8244501ce539 ==============================
+[0m23:31:33.002896 [info ] [MainThread]: Running with dbt=1.2.5
+[0m23:31:33.003530 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m23:31:33.003530 [debug] [MainThread]: Tracking: tracking
+[0m23:31:33.025531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B55D4A7820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B55D4A7580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B55D4A77C0>]}
+[0m23:31:33.037941 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\jenumerables\.dbt
+[0m23:31:51.591028 [debug] [MainThread]: Starter project path: C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\include\starter_project
+[0m23:36:23.312771 [info ] [MainThread]: Profile dbtlearn written to C:\Users\jenumerables\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:36:23.316454 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:36:23.320875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B55D4A7100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B55D4A6E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002B55D4A6B60>]}
+[0m23:36:23.323773 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-03 23:41:56.322145 | b01e8c4a-fd06-42a5-a27c-358775089e64 ==============================
+[0m23:41:56.322145 [info ] [MainThread]: Running with dbt=1.2.5
+[0m23:41:56.323145 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m23:41:56.324146 [debug] [MainThread]: Tracking: tracking
+[0m23:41:56.349029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F96E51B8E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F96E519C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F96E519C60>]}
+[0m23:41:57.486065 [debug] [MainThread]: Executing "git --help"
+[0m23:41:57.537238 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:41:57.537238 [debug] [MainThread]: STDERR: "b''"
+[0m23:41:57.544239 [debug] [MainThread]: Acquiring new snowflake connection "debug"
+[0m23:41:57.547237 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:41:57.548241 [debug] [MainThread]: On debug: select 1 as id
+[0m23:41:57.548241 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:41:58.813105 [debug] [MainThread]: Snowflake adapter: Got an error when attempting to open a snowflake connection. No retries attempted: '250001 (08001): Failed to connect to DB: ay71119.us-east-2.aws.snowflakecomputing.com:443. Incorrect username or password was specified.'
+[0m23:41:58.814096 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m23:41:58.815097 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m23:41:58.815097 [debug] [MainThread]: On debug: No close available on handle
+[0m23:41:58.820114 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F97E5E43A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F97F6E8C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F97F6E99F0>]}
+[0m23:41:58.821098 [debug] [MainThread]: Flushing usage events
+[0m23:41:59.275314 [debug] [MainThread]: Connection 'debug' was properly closed.
+
+
+============================== 2023-03-03 23:45:30.799878 | e972138b-953b-4081-8726-ad2a801022b7 ==============================
+[0m23:45:30.799878 [info ] [MainThread]: Running with dbt=1.2.5
+[0m23:45:30.800476 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'config_dir': False, 'which': 'debug', 'indirect_selection': 'eager'}
+[0m23:45:30.800879 [debug] [MainThread]: Tracking: tracking
+[0m23:45:30.821195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FC429BC40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FC423B6D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FC423A290>]}
+[0m23:45:31.709348 [debug] [MainThread]: Executing "git --help"
+[0m23:45:31.748243 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:45:31.748243 [debug] [MainThread]: STDERR: "b''"
+[0m23:45:31.750242 [debug] [MainThread]: Acquiring new snowflake connection "debug"
+[0m23:45:31.751243 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:45:31.752244 [debug] [MainThread]: On debug: select 1 as id
+[0m23:45:31.752244 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:45:33.276003 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.52 seconds
+[0m23:45:33.279002 [debug] [MainThread]: On debug: Close
+[0m23:45:33.536380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FC4239C60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FD3920190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FD43355D0>]}
+[0m23:45:33.537684 [debug] [MainThread]: Flushing usage events
+[0m23:45:33.962294 [debug] [MainThread]: Connection 'debug' was properly closed.
