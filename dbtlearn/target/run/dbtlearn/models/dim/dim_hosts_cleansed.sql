@@ -1,8 +1,7 @@
 
-  create or replace  view airbnb.dev.dim_hosts_cleansed
-  
-   as (
-    WITH src_hosts AS(
+
+      create or replace transient table airbnb.dev.dim_hosts_cleansed  as
+      (WITH src_hosts AS(
     SELECT * FROM airbnb.dev.src_hosts
 )
 SELECT
@@ -12,4 +11,5 @@ SELECT
 	, created_at
 	, updated_at
 FROM src_hosts
-  );
+      );
+    
