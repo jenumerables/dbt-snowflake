@@ -1,8 +1,26 @@
 
-
-      create or replace transient table airbnb.dev.dim_listings_cleansed  as
-      (WITH src_listings AS (
-SELECT * FROM airbnb.dev.src_listings
+  create or replace  view airbnb.dev.dim_listings_cleansed
+  
+   as (
+    
+WITH  __dbt__cte__src_listings as (
+WITH raw_listings AS (
+	SELECT * FROM AIRBNB.RAW.RAW_LISTINGS
+)
+SELECT
+	  id AS listing_id
+    , name as listing_name
+    , listing_url
+    , room_type
+    , minimum_nights
+    , host_id
+    , price as price_str
+    , created_at
+    , updated_at
+FROM 
+	raw_listings
+),src_listings AS (
+SELECT * FROM __dbt__cte__src_listings
 )
     SELECT
     listing_id,
@@ -18,5 +36,4 @@ SELECT * FROM airbnb.dev.src_listings
     updated_at
     FROM
         src_listings
-      );
-    
+  );
