@@ -9005,3 +9005,759 @@ ON (TO_DATE(r.date) = DATEADD(DAY, 1, fm.full_moon_date))
 [0m03:54:08.698815 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
 [0m03:54:08.699807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002205C144730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002205AEA6950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002205C11BFD0>]}
 [0m03:54:08.699807 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-03-09 03:00:53.245357 | 46aa1b52-fc39-4458-9a7f-bbd29dab4117 ==============================
+[0m03:00:53.245357 [info ] [MainThread]: Running with dbt=1.2.5
+[0m03:00:53.246591 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m03:00:53.247339 [debug] [MainThread]: Tracking: tracking
+[0m03:00:53.247339 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F400012A40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F400011BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F400012170>]}
+[0m03:00:53.287674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F400156740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4001567D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4001565F0>]}
+[0m03:00:53.287674 [debug] [MainThread]: Flushing usage events
+[0m03:00:53.679792 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 9
+    ------------------------------
+    6  |     tables:
+    7  |     - name: listings
+    8  |     identifier: raw_listings
+    9  |     - name: hosts
+    10 |     identifier: raw_hosts
+    11 |     - name: reviews
+    12 |     identifier: raw_reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block mapping
+      in "<unicode string>", line 4, column 5
+    did not find expected key
+      in "<unicode string>", line 9, column 5
+[0m03:00:53.756699 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 56, in load_yaml_text
+    return safe_load(contents)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 51, in safe_load
+    return yaml.load(contents, Loader=SafeLoader)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml\_yaml.pyx", line 673, in yaml._yaml.CParser.get_single_node
+  File "yaml\_yaml.pyx", line 687, in yaml._yaml.CParser._compose_document
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 806, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 847, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 860, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block mapping
+  in "<unicode string>", line 4, column 5
+did not find expected key
+  in "<unicode string>", line 9, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 119, in yaml_from_file
+    return load_yaml_text(source_file.contents or "", source_file.path)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 63, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 9
+  ------------------------------
+  6  |     tables:
+  7  |     - name: listings
+  8  |     identifier: raw_listings
+  9  |     - name: hosts
+  10 |     identifier: raw_hosts
+  11 |     - name: reviews
+  12 |     identifier: raw_reviews
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block mapping
+    in "<unicode string>", line 4, column 5
+  did not find expected key
+    in "<unicode string>", line 9, column 5
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 129, in main
+    results, succeeded = handle_and_check(args)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 191, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 238, in run_from_args
+    results = task.run()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 451, in run
+    self._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 159, in _runtime_initialize
+    super()._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 92, in _runtime_initialize
+    self.load_manifest()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 81, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 219, in get_full_manifest
+    manifest = loader.load()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 245, in load
+    read_files(project, self.manifest.files, project_parser_files, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 182, in read_files
+    project_files["SchemaParser"] = read_files_for_parser(
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 134, in read_files_for_parser
+    source_files = get_source_files(project, dirs, extension, parse_ft, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 125, in get_source_files
+    file = load_source_file(fp, parse_file_type, project.project_name, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 55, in load_source_file
+    dfy = yaml_from_file(source_file)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 122, in yaml_from_file
+    raise ParsingException(
+dbt.exceptions.ParsingException: Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 9
+    ------------------------------
+    6  |     tables:
+    7  |     - name: listings
+    8  |     identifier: raw_listings
+    9  |     - name: hosts
+    10 |     identifier: raw_hosts
+    11 |     - name: reviews
+    12 |     identifier: raw_reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block mapping
+      in "<unicode string>", line 4, column 5
+    did not find expected key
+      in "<unicode string>", line 9, column 5
+
+
+
+============================== 2023-03-09 03:02:03.278088 | fac13a02-c231-411c-8260-59be2de352f4 ==============================
+[0m03:02:03.278088 [info ] [MainThread]: Running with dbt=1.2.5
+[0m03:02:03.279085 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m03:02:03.280090 [debug] [MainThread]: Tracking: tracking
+[0m03:02:03.281095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000111E4292A40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000111E4291BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000111E4292170>]}
+[0m03:02:03.309088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000111E43D6740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000111E43D67D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000111E43D65F0>]}
+[0m03:02:03.310085 [debug] [MainThread]: Flushing usage events
+[0m03:02:03.879038 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+[0m03:02:03.891130 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 56, in load_yaml_text
+    return safe_load(contents)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 51, in safe_load
+    return yaml.load(contents, Loader=SafeLoader)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml\_yaml.pyx", line 673, in yaml._yaml.CParser.get_single_node
+  File "yaml\_yaml.pyx", line 687, in yaml._yaml.CParser._compose_document
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 806, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 808, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 860, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 7, column 7
+did not find expected '-' indicator
+  in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 119, in yaml_from_file
+    return load_yaml_text(source_file.contents or "", source_file.path)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 63, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 8
+  ------------------------------
+  5  |     schema: raw
+  6  |     tables:
+  7  |       - name: listings
+  8  |       identifier: raw_listings
+  9  |       - name: hosts
+  10 |       identifier: raw_hosts
+  11 |       - name: reviews
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 7, column 7
+  did not find expected '-' indicator
+    in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 129, in main
+    results, succeeded = handle_and_check(args)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 191, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 238, in run_from_args
+    results = task.run()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 451, in run
+    self._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 159, in _runtime_initialize
+    super()._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 92, in _runtime_initialize
+    self.load_manifest()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 81, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 219, in get_full_manifest
+    manifest = loader.load()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 245, in load
+    read_files(project, self.manifest.files, project_parser_files, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 182, in read_files
+    project_files["SchemaParser"] = read_files_for_parser(
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 134, in read_files_for_parser
+    source_files = get_source_files(project, dirs, extension, parse_ft, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 125, in get_source_files
+    file = load_source_file(fp, parse_file_type, project.project_name, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 55, in load_source_file
+    dfy = yaml_from_file(source_file)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 122, in yaml_from_file
+    raise ParsingException(
+dbt.exceptions.ParsingException: Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+
+
+
+============================== 2023-03-09 03:02:40.597145 | 8dbe49f5-8477-4c12-bd43-88179f68027c ==============================
+[0m03:02:40.597145 [info ] [MainThread]: Running with dbt=1.2.5
+[0m03:02:40.597824 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m03:02:40.598148 [debug] [MainThread]: Tracking: tracking
+[0m03:02:40.598148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A0943C2AA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A0943C1C30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A0943C2230>]}
+[0m03:02:40.625146 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A0945067A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A094506830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A0945066B0>]}
+[0m03:02:40.626257 [debug] [MainThread]: Flushing usage events
+[0m03:02:41.187785 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+[0m03:02:41.192791 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 56, in load_yaml_text
+    return safe_load(contents)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 51, in safe_load
+    return yaml.load(contents, Loader=SafeLoader)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml\_yaml.pyx", line 673, in yaml._yaml.CParser.get_single_node
+  File "yaml\_yaml.pyx", line 687, in yaml._yaml.CParser._compose_document
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 806, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 808, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 860, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 7, column 7
+did not find expected '-' indicator
+  in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 119, in yaml_from_file
+    return load_yaml_text(source_file.contents or "", source_file.path)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 63, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 8
+  ------------------------------
+  5  |     schema: raw
+  6  |     tables:
+  7  |       - name: listings
+  8  |       identifier: raw_listings
+  9  |       - name: hosts
+  10 |       identifier: raw_hosts
+  11 |       - name: reviews
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 7, column 7
+  did not find expected '-' indicator
+    in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 129, in main
+    results, succeeded = handle_and_check(args)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 191, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 238, in run_from_args
+    results = task.run()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 451, in run
+    self._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 159, in _runtime_initialize
+    super()._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 92, in _runtime_initialize
+    self.load_manifest()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 81, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 219, in get_full_manifest
+    manifest = loader.load()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 245, in load
+    read_files(project, self.manifest.files, project_parser_files, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 182, in read_files
+    project_files["SchemaParser"] = read_files_for_parser(
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 134, in read_files_for_parser
+    source_files = get_source_files(project, dirs, extension, parse_ft, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 125, in get_source_files
+    file = load_source_file(fp, parse_file_type, project.project_name, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 55, in load_source_file
+    dfy = yaml_from_file(source_file)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 122, in yaml_from_file
+    raise ParsingException(
+dbt.exceptions.ParsingException: Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+
+
+
+============================== 2023-03-09 03:03:00.024458 | cecc6ea1-63e2-4384-be13-ebb66f0d4921 ==============================
+[0m03:03:00.024458 [info ] [MainThread]: Running with dbt=1.2.5
+[0m03:03:00.025530 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m03:03:00.026458 [debug] [MainThread]: Tracking: tracking
+[0m03:03:00.026458 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2A1512AA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2A1511C30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2A15119F0>]}
+[0m03:03:00.055457 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2A16567A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2A1656830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2A16566B0>]}
+[0m03:03:00.056461 [debug] [MainThread]: Flushing usage events
+[0m03:03:00.411290 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+[0m03:03:00.415463 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 56, in load_yaml_text
+    return safe_load(contents)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 51, in safe_load
+    return yaml.load(contents, Loader=SafeLoader)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml\_yaml.pyx", line 673, in yaml._yaml.CParser.get_single_node
+  File "yaml\_yaml.pyx", line 687, in yaml._yaml.CParser._compose_document
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 806, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 808, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 860, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 7, column 7
+did not find expected '-' indicator
+  in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 119, in yaml_from_file
+    return load_yaml_text(source_file.contents or "", source_file.path)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 63, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 8
+  ------------------------------
+  5  |     schema: raw
+  6  |     tables:
+  7  |       - name: listings
+  8  |       identifier: raw_listings
+  9  |       - name: hosts
+  10 |       identifier: raw_hosts
+  11 |       - name: reviews
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 7, column 7
+  did not find expected '-' indicator
+    in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 129, in main
+    results, succeeded = handle_and_check(args)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 191, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 238, in run_from_args
+    results = task.run()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 451, in run
+    self._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 159, in _runtime_initialize
+    super()._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 92, in _runtime_initialize
+    self.load_manifest()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 81, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 219, in get_full_manifest
+    manifest = loader.load()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 245, in load
+    read_files(project, self.manifest.files, project_parser_files, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 182, in read_files
+    project_files["SchemaParser"] = read_files_for_parser(
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 134, in read_files_for_parser
+    source_files = get_source_files(project, dirs, extension, parse_ft, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 125, in get_source_files
+    file = load_source_file(fp, parse_file_type, project.project_name, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 55, in load_source_file
+    dfy = yaml_from_file(source_file)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 122, in yaml_from_file
+    raise ParsingException(
+dbt.exceptions.ParsingException: Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+
+
+
+============================== 2023-03-09 03:04:08.387353 | 11b7ef98-6b12-4881-ad76-5b5ec17b3cb5 ==============================
+[0m03:04:08.387353 [info ] [MainThread]: Running with dbt=1.2.5
+[0m03:04:08.388402 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m03:04:08.388402 [debug] [MainThread]: Tracking: tracking
+[0m03:04:08.388402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D660342A70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D660341C00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D6603421D0>]}
+[0m03:04:08.417494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D660486770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D660486800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D660486620>]}
+[0m03:04:08.418388 [debug] [MainThread]: Flushing usage events
+[0m03:04:08.916960 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+[0m03:04:08.925959 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 56, in load_yaml_text
+    return safe_load(contents)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 51, in safe_load
+    return yaml.load(contents, Loader=SafeLoader)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml\_yaml.pyx", line 673, in yaml._yaml.CParser.get_single_node
+  File "yaml\_yaml.pyx", line 687, in yaml._yaml.CParser._compose_document
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 806, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 731, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 845, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml\_yaml.pyx", line 729, in yaml._yaml.CParser._compose_node
+  File "yaml\_yaml.pyx", line 808, in yaml._yaml.CParser._compose_sequence_node
+  File "yaml\_yaml.pyx", line 860, in yaml._yaml.CParser._parse_next_event
+yaml.parser.ParserError: while parsing a block collection
+  in "<unicode string>", line 7, column 7
+did not find expected '-' indicator
+  in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 119, in yaml_from_file
+    return load_yaml_text(source_file.contents or "", source_file.path)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\clients\yaml_helper.py", line 63, in load_yaml_text
+    raise dbt.exceptions.ValidationException(error)
+dbt.exceptions.ValidationException: Runtime Error
+  Syntax error near line 8
+  ------------------------------
+  5  |     schema: raw
+  6  |     tables:
+  7  |       - name: listings
+  8  |       identifier: raw_listings
+  9  |       - name: hosts
+  10 |       identifier: raw_hosts
+  11 |       - name: reviews
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block collection
+    in "<unicode string>", line 7, column 7
+  did not find expected '-' indicator
+    in "<unicode string>", line 8, column 7
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 129, in main
+    results, succeeded = handle_and_check(args)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 191, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\main.py", line 238, in run_from_args
+    results = task.run()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 451, in run
+    self._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 159, in _runtime_initialize
+    super()._runtime_initialize()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 92, in _runtime_initialize
+    self.load_manifest()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\task\runnable.py", line 81, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 219, in get_full_manifest
+    manifest = loader.load()
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\manifest.py", line 245, in load
+    read_files(project, self.manifest.files, project_parser_files, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 182, in read_files
+    project_files["SchemaParser"] = read_files_for_parser(
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 134, in read_files_for_parser
+    source_files = get_source_files(project, dirs, extension, parse_ft, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 125, in get_source_files
+    file = load_source_file(fp, parse_file_type, project.project_name, saved_files)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\read_files.py", line 55, in load_source_file
+    dfy = yaml_from_file(source_file)
+  File "C:\Users\jenumerables\AppData\Local\Programs\Python\Python310\lib\site-packages\dbt\parser\schemas.py", line 122, in yaml_from_file
+    raise ParsingException(
+dbt.exceptions.ParsingException: Parsing Error
+  Error reading dbtlearn: src\sources.yml - Runtime Error
+    Syntax error near line 8
+    ------------------------------
+    5  |     schema: raw
+    6  |     tables:
+    7  |       - name: listings
+    8  |       identifier: raw_listings
+    9  |       - name: hosts
+    10 |       identifier: raw_hosts
+    11 |       - name: reviews
+    
+    Raw Error:
+    ------------------------------
+    while parsing a block collection
+      in "<unicode string>", line 7, column 7
+    did not find expected '-' indicator
+      in "<unicode string>", line 8, column 7
+
+
+
+============================== 2023-03-09 03:04:24.892368 | 474688ec-8586-4de7-a000-e2fb27d4205b ==============================
+[0m03:04:24.892368 [info ] [MainThread]: Running with dbt=1.2.5
+[0m03:04:24.893367 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\jenumerables\\.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'parse_only': False, 'which': 'compile', 'rpc_method': 'compile', 'indirect_selection': 'eager'}
+[0m03:04:24.893367 [debug] [MainThread]: Tracking: tracking
+[0m03:04:24.894368 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA88D2A40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA88D1BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA88D1630>]}
+[0m03:04:24.960387 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:04:24.961386 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:04:24.967391 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '474688ec-8586-4de7-a000-e2fb27d4205b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA8A559F0>]}
+[0m03:04:24.975387 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '474688ec-8586-4de7-a000-e2fb27d4205b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA89A35E0>]}
+[0m03:04:24.975387 [info ] [MainThread]: Found 9 models, 0 tests, 0 snapshots, 0 analyses, 267 macros, 0 operations, 1 seed file, 3 sources, 0 exposures, 0 metrics
+[0m03:04:24.976387 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '474688ec-8586-4de7-a000-e2fb27d4205b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA89A37F0>]}
+[0m03:04:24.978389 [info ] [MainThread]: 
+[0m03:04:24.979390 [debug] [MainThread]: Acquiring new snowflake connection "master"
+[0m03:04:24.981393 [debug] [ThreadPool]: Acquiring new snowflake connection "list_airbnb_dev"
+[0m03:04:24.993391 [debug] [ThreadPool]: Using snowflake connection "list_airbnb_dev"
+[0m03:04:24.993391 [debug] [ThreadPool]: On list_airbnb_dev: /* {"app": "dbt", "dbt_version": "1.2.5", "profile_name": "dbtlearn", "target_name": "dev", "connection_name": "list_airbnb_dev"} */
+show terse objects in airbnb.dev
+[0m03:04:24.994390 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:04:26.934355 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.94 seconds
+[0m03:04:26.936355 [debug] [ThreadPool]: On list_airbnb_dev: Close
+[0m03:04:27.163191 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '474688ec-8586-4de7-a000-e2fb27d4205b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA89A33A0>]}
+[0m03:04:27.164188 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m03:04:27.165188 [info ] [MainThread]: 
+[0m03:04:27.174188 [debug] [Thread-1 (]: Began running node model.dbtlearn.listings
+[0m03:04:27.174188 [debug] [Thread-2 (]: Began running node model.dbtlearn.src_hosts
+[0m03:04:27.175189 [debug] [Thread-3 (]: Began running node model.dbtlearn.src_listings
+[0m03:04:27.175189 [debug] [Thread-4 (]: Began running node model.dbtlearn.src_reviews
+[0m03:04:27.176189 [debug] [Thread-1 (]: Acquiring new snowflake connection "model.dbtlearn.listings"
+[0m03:04:27.177188 [debug] [Thread-2 (]: Acquiring new snowflake connection "model.dbtlearn.src_hosts"
+[0m03:04:27.178188 [debug] [Thread-3 (]: Acquiring new snowflake connection "model.dbtlearn.src_listings"
+[0m03:04:27.179189 [debug] [Thread-4 (]: Acquiring new snowflake connection "model.dbtlearn.src_reviews"
+[0m03:04:27.180191 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.listings
+[0m03:04:27.181190 [debug] [Thread-2 (]: Began compiling node model.dbtlearn.src_hosts
+[0m03:04:27.182193 [debug] [Thread-3 (]: Began compiling node model.dbtlearn.src_listings
+[0m03:04:27.182193 [debug] [Thread-4 (]: Began compiling node model.dbtlearn.src_reviews
+[0m03:04:27.183189 [debug] [Thread-1 (]: Compiling model.dbtlearn.listings
+[0m03:04:27.183189 [debug] [Thread-2 (]: Compiling model.dbtlearn.src_hosts
+[0m03:04:27.183189 [debug] [Thread-3 (]: Compiling model.dbtlearn.src_listings
+[0m03:04:27.184189 [debug] [Thread-4 (]: Compiling model.dbtlearn.src_reviews
+[0m03:04:27.189189 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.listings"
+[0m03:04:27.194251 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbtlearn.src_hosts"
+[0m03:04:27.198188 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbtlearn.src_listings"
+[0m03:04:27.202194 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbtlearn.src_reviews"
+[0m03:04:27.204190 [debug] [Thread-1 (]: finished collecting timing info
+[0m03:04:27.204190 [debug] [Thread-2 (]: finished collecting timing info
+[0m03:04:27.205188 [debug] [Thread-3 (]: finished collecting timing info
+[0m03:04:27.205188 [debug] [Thread-1 (]: Began executing node model.dbtlearn.listings
+[0m03:04:27.206189 [debug] [Thread-2 (]: Finished running node model.dbtlearn.src_hosts
+[0m03:04:27.207188 [debug] [Thread-4 (]: finished collecting timing info
+[0m03:04:27.208189 [debug] [Thread-3 (]: Finished running node model.dbtlearn.src_listings
+[0m03:04:27.209190 [debug] [Thread-1 (]: finished collecting timing info
+[0m03:04:27.209190 [debug] [Thread-2 (]: Began running node seed.dbtlearn.seed_full_moon_dates
+[0m03:04:27.210190 [debug] [Thread-4 (]: Finished running node model.dbtlearn.src_reviews
+[0m03:04:27.211187 [debug] [Thread-3 (]: Began running node model.dbtlearn.dim_hosts_cleansed
+[0m03:04:27.212187 [debug] [Thread-1 (]: Finished running node model.dbtlearn.listings
+[0m03:04:27.214195 [debug] [Thread-2 (]: Acquiring new snowflake connection "seed.dbtlearn.seed_full_moon_dates"
+[0m03:04:27.215192 [debug] [Thread-4 (]: Began running node model.dbtlearn.dim_listings_cleansed
+[0m03:04:27.216191 [debug] [Thread-3 (]: Acquiring new snowflake connection "model.dbtlearn.dim_hosts_cleansed"
+[0m03:04:27.217191 [debug] [Thread-1 (]: Began running node model.dbtlearn.fct_reviews
+[0m03:04:27.218188 [debug] [Thread-2 (]: Began compiling node seed.dbtlearn.seed_full_moon_dates
+[0m03:04:27.218439 [debug] [Thread-4 (]: Acquiring new snowflake connection "model.dbtlearn.dim_listings_cleansed"
+[0m03:04:27.219189 [debug] [Thread-3 (]: Began compiling node model.dbtlearn.dim_hosts_cleansed
+[0m03:04:27.220187 [debug] [Thread-1 (]: Acquiring new snowflake connection "model.dbtlearn.fct_reviews"
+[0m03:04:27.220187 [debug] [Thread-2 (]: Compiling seed.dbtlearn.seed_full_moon_dates
+[0m03:04:27.220187 [debug] [Thread-4 (]: Began compiling node model.dbtlearn.dim_listings_cleansed
+[0m03:04:27.221314 [debug] [Thread-3 (]: Compiling model.dbtlearn.dim_hosts_cleansed
+[0m03:04:27.221314 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.fct_reviews
+[0m03:04:27.223188 [debug] [Thread-2 (]: Writing injected SQL for node "seed.dbtlearn.seed_full_moon_dates"
+[0m03:04:27.224248 [debug] [Thread-4 (]: Compiling model.dbtlearn.dim_listings_cleansed
+[0m03:04:27.240189 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbtlearn.dim_hosts_cleansed"
+[0m03:04:27.241189 [debug] [Thread-1 (]: Compiling model.dbtlearn.fct_reviews
+[0m03:04:27.241360 [debug] [Thread-2 (]: finished collecting timing info
+[0m03:04:27.251189 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbtlearn.dim_listings_cleansed"
+[0m03:04:27.269147 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.fct_reviews"
+[0m03:04:27.270087 [debug] [Thread-2 (]: Began executing node seed.dbtlearn.seed_full_moon_dates
+[0m03:04:27.270087 [debug] [Thread-3 (]: finished collecting timing info
+[0m03:04:27.271078 [debug] [Thread-2 (]: finished collecting timing info
+[0m03:04:27.271078 [debug] [Thread-4 (]: finished collecting timing info
+[0m03:04:27.272077 [debug] [Thread-1 (]: finished collecting timing info
+[0m03:04:27.272077 [debug] [Thread-3 (]: Began executing node model.dbtlearn.dim_hosts_cleansed
+[0m03:04:27.274085 [debug] [Thread-2 (]: Finished running node seed.dbtlearn.seed_full_moon_dates
+[0m03:04:27.275078 [debug] [Thread-4 (]: Began executing node model.dbtlearn.dim_listings_cleansed
+[0m03:04:27.275078 [debug] [Thread-1 (]: Began executing node model.dbtlearn.fct_reviews
+[0m03:04:27.276077 [debug] [Thread-3 (]: finished collecting timing info
+[0m03:04:27.276077 [debug] [Thread-4 (]: finished collecting timing info
+[0m03:04:27.277077 [debug] [Thread-1 (]: finished collecting timing info
+[0m03:04:27.278077 [debug] [Thread-3 (]: Finished running node model.dbtlearn.dim_hosts_cleansed
+[0m03:04:27.279077 [debug] [Thread-4 (]: Finished running node model.dbtlearn.dim_listings_cleansed
+[0m03:04:27.279077 [debug] [Thread-1 (]: Finished running node model.dbtlearn.fct_reviews
+[0m03:04:27.280077 [debug] [Thread-2 (]: Began running node model.dbtlearn.dim_listings_w_hosts
+[0m03:04:27.281077 [debug] [Thread-4 (]: Began running node model.dbtlearn.mart_fullmoon_reviews
+[0m03:04:27.282077 [debug] [Thread-2 (]: Acquiring new snowflake connection "model.dbtlearn.dim_listings_w_hosts"
+[0m03:04:27.282077 [debug] [Thread-4 (]: Acquiring new snowflake connection "model.dbtlearn.mart_fullmoon_reviews"
+[0m03:04:27.283078 [debug] [Thread-2 (]: Began compiling node model.dbtlearn.dim_listings_w_hosts
+[0m03:04:27.283078 [debug] [Thread-4 (]: Began compiling node model.dbtlearn.mart_fullmoon_reviews
+[0m03:04:27.283078 [debug] [Thread-2 (]: Compiling model.dbtlearn.dim_listings_w_hosts
+[0m03:04:27.284077 [debug] [Thread-4 (]: Compiling model.dbtlearn.mart_fullmoon_reviews
+[0m03:04:27.288078 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbtlearn.dim_listings_w_hosts"
+[0m03:04:27.295077 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbtlearn.mart_fullmoon_reviews"
+[0m03:04:27.296076 [debug] [Thread-2 (]: finished collecting timing info
+[0m03:04:27.296076 [debug] [Thread-4 (]: finished collecting timing info
+[0m03:04:27.297078 [debug] [Thread-2 (]: Began executing node model.dbtlearn.dim_listings_w_hosts
+[0m03:04:27.297078 [debug] [Thread-4 (]: Began executing node model.dbtlearn.mart_fullmoon_reviews
+[0m03:04:27.298311 [debug] [Thread-2 (]: finished collecting timing info
+[0m03:04:27.298311 [debug] [Thread-4 (]: finished collecting timing info
+[0m03:04:27.299076 [debug] [Thread-2 (]: Finished running node model.dbtlearn.dim_listings_w_hosts
+[0m03:04:27.300077 [debug] [Thread-4 (]: Finished running node model.dbtlearn.mart_fullmoon_reviews
+[0m03:04:27.301076 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:04:27.302079 [debug] [MainThread]: Connection 'list_airbnb_dev' was properly closed.
+[0m03:04:27.302079 [debug] [MainThread]: Connection 'model.dbtlearn.fct_reviews' was properly closed.
+[0m03:04:27.302079 [debug] [MainThread]: Connection 'model.dbtlearn.dim_listings_w_hosts' was properly closed.
+[0m03:04:27.303078 [debug] [MainThread]: Connection 'model.dbtlearn.dim_hosts_cleansed' was properly closed.
+[0m03:04:27.303078 [debug] [MainThread]: Connection 'model.dbtlearn.mart_fullmoon_reviews' was properly closed.
+[0m03:04:27.312078 [info ] [MainThread]: Done.
+[0m03:04:27.313136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA89A2620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA89A2830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022AA9D02560>]}
+[0m03:04:27.314087 [debug] [MainThread]: Flushing usage events
