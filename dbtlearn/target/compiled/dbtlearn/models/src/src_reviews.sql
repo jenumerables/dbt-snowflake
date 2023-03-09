@@ -1,5 +1,5 @@
 WITH raw_reviews AS (
-	SELECT * FROM airbnb.raw.raw_reviewscl
+	SELECT * FROM airbnb.raw.raw_reviews
 )
 SELECT
 	  listing_id
