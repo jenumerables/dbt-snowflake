@@ -3,10 +3,10 @@
 ### Course content
 
 - Theory
-  --Data maturity model
-  --Data warehouses, data lakes, and lake houses
-  --The modern data stack
-  --Slowly changing dimensions (SCD)
+  - Data maturity model
+  - Data warehouses, data lakes, and lake houses
+  - The modern data stack
+  - Slowly changing dimensions (SCD)
   
  - Airbnb use-case
  - Setup
