@@ -2,7 +2,7 @@ with source as (
       select * from {{ source('airbnb', 'listings') }}
 ),
 renamed as (
-    select
+    select *
         
 
     from source
