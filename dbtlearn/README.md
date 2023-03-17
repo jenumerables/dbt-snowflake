@@ -1,10 +1,25 @@
-Welcome to your new dbt project!
+# The Complete dbt (Data Build Tool) Bootcamp: Zero to Hero on Udemy
 
-### Using the starter project
+### Course content
 
-Try running the following commands:
-- dbt run
-- dbt test
+- Theory
+  - Data maturity model
+  - Data warehouses, data lakes, and lake houses
+  - The modern data stack
+  - Slowly changing dimensions (SCD)
+  
+ - Airbnb use-case
+ - Setup
+ - Models
+ - Materialization
+ - Seeds and Sources
+ - Snapshots
+ - Tests
+ - Macros, custom tests, and packages
+ - Documentation
+ - Analysis, hooks, and exposures
+ - dbt Hero
+ - Debugging tests and testing with dbt expectations
 
 
 ### Resources:
