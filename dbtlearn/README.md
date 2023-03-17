@@ -15,6 +15,11 @@
  - Seeds and Sources
  - Snapshots
  - Tests
+ - Macros, custom tests, and packages
+ - Documentation
+ - Analysis, hooks, and exposures
+ - dbt Hero
+ - Debugging tests and testing with dbt expectations
 
 
 ### Resources:
